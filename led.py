@@ -8,9 +8,12 @@ import time
 # TODO: Add code here
 leds = Leds()
 
-time.sleep(1)
 leds.set_color("LEFT", "GREEN")
-leds.set_color("RIGHT", "GREEN")
-time.sleep(1)
+time.sleep(.500)
+leds.set_color("RIGHT", "YELLOW")
+time.sleep(.500)
 leds.set_color("LEFT", "RED")
-leds.set_color("RIGHT", "RED")
+time.sleep(.500)
+leds.set_color("RIGHT", "GREEN")
+time.sleep(.500)
+leds.set_color("LEFT", "GREEN")
