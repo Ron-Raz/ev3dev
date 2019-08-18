@@ -6,8 +6,8 @@ from ev3dev2.led import Leds
 from ev3dev2.sound import Sound
 
 leds=Leds()
-leds.set_color('LEFT','GREEN')
-leds.set_color('RIGHT','GREEN')
+ledsGreen()
+
 import socket
 sock=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server='192.168.2.1'
@@ -21,6 +21,13 @@ def top_left_channel_1_action(state):
 
 def bottom_right_channel_4_action(state):
     print("bottom right on channel 4: %s" % state)
+
+def ledsOff():
+	leds.all_off()
+
+def ledsGreen():
+	leds.set_color('LEFT','GREEN')
+	leds.set_color('RIGHT','GREEN')
 
 ir = InfraredSensor()
 ir.on_channel1_top_left = top_left_channel_1_action
@@ -37,4 +44,4 @@ while countdown>0:
 		countdown-=1
 	#time.sleep(0.01)
 
-leds.all_off()
+ledsOff()
